@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        .nav-text {
+            display: none;
+            color: white;
+            font-weight: 500;
+        }
+
         /* Styles for mobile devices */
         @media screen and (min-width: 768px) {
             .bg-no-desktop {
@@ -13,7 +19,7 @@
             }
 
             .wellcome-text {
-                color: #4E87F5;
+                color: white;
             }
 
             .navbar {
@@ -23,6 +29,14 @@
                 display: flex;
                 justify-content: center;
                 height: 80px;
+            }
+
+            .nav-text {
+                display: block;
+            }
+
+            .icon {
+                display: none;
             }
         }
     </style>
@@ -39,11 +53,11 @@
                 placeholder="Cari Laundry di sekitar anda" type="text">
         </div>
 
-        <div class="flex items-center gap-x-4 text-white mt-5 mx-5">
+        <div class="flex items-center gap-x-4 text-white mt-5 mx-5 md:absolute md:right-0 md:top-[0] md:mt-2">
             <img src="./Asset/avatar.svg" alt="">
-            <div>
-                <p class="wellcome-text text-[14px]">Wellcome Back</p>
-                <h3 class="wellcome-text text-[19px] font-bold">Ali Askari</h3>
+            <div class="md:flex md:justify-center md:items-center md:gap-x-2">
+                <p class="wellcome-text text-[14px] md:text-[16px]">Wellcome Back</p>
+                <h3 class="wellcome-text text-[19px] md:text-[16px] font-bold">Ali Askari</h3>
             </div>
         </div>
 
@@ -75,10 +89,14 @@
             <div class="mt-28">
                 <nav class="bg-[#4E87F5] px-2 py-3 rounded-[15px] shadow-md">
                     <ul class="navbar flex justify-center items-center gap-x-14">
-                        <li><img src="./Asset/icon-home.svg" alt=""></li>
-                        <li><img src="./Asset/icon-payment.svg" alt=""></li>
-                        <li><img src="./Asset/icon-washing-machine.svg" alt=""></li>
-                        <li><img src="./Asset/icon-user.svg" alt=""></li>
+                        <li><img class="icon" src="./Asset/icon-home.svg" alt=""><span class="nav-text">Home</span></li>
+                        <li><img class="icon" src="./Asset/icon-payment.svg" alt=""><span
+                                class="nav-text">Payment</span></li>
+                        <li><img class="icon" src="./Asset/icon-washing-machine.svg" alt=""><span
+                                class="nav-text">Washing</span>
+                        </li>
+                        <li><img class="icon" src="./Asset/icon-user.svg" alt=""><span class="nav-text">Profile</span>
+                        </li>
                     </ul>
                 </nav>
             </div>
